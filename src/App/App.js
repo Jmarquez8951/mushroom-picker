@@ -19,7 +19,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h2>Testing header</h2>
+        <h1 className="text-white">Mushroom Picker</h1>
         <Forest mushrooms={this.state.mushrooms}/>
       </div>
     );
