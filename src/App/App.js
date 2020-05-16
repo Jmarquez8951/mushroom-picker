@@ -27,9 +27,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1 className="text-white">Mushroom Picker</h1>
-        <button className="btn btn-dark" onClick={this.randomMushroomEvent}>Pick a Mushroom</button>
-        <Forest mushrooms={this.state.mushrooms}/>
+        <button className="btn btn-dark mb-3" onClick={this.randomMushroomEvent}>Pick a Mushroom</button>
         <Basket basketMushrooms={this.state.basket}/>
+        <Forest mushrooms={this.state.mushrooms}/>
       </div>
     );
   }
