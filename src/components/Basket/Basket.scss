@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.Basket {
+  background-color: $secondColor;
+  margin-bottom: 30px;
+  margin: auto;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  padding-top: 20px;
+  width: 90%;
+  img {
+    width: 225px;
+  }
+  p {
+    font-size: 18px;
+  }
+}

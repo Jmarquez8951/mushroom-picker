@@ -1,7 +1,14 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
+import mushroomShape from '../../helpers/propz/mushroomShape';
+
 import './Mushroom.scss';
 
 class Mushroom extends React.Component {
+  static propTypes = {
+    mushroom: mushroomShape.mushroomShape,
+  }
+
   render() {
     const { mushroom } = this.props;
     return (
@@ -15,21 +22,21 @@ class Mushroom extends React.Component {
               mushroom.isMagic ? (
                 <p className="text-white">Has magic properties.</p>
               ) : (
-                <p></p>
+                ''
               )
             }
             {
               mushroom.isDeadly ? (
                 <p className="text-white">Can cause death.</p>
               ) : (
-                <p></p>
+                ''
               )
             }
             {
               mushroom.isPoisonous ? (
                 <p className="text-white">Is very poisonous.</p>
               ) : (
-                <p></p>
+                ''
               )
             }
             {mushroom.isDeadly === false && mushroom.isMagic === false && mushroom.isPoisonous === false && (
