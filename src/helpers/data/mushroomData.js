@@ -190,6 +190,13 @@ const getBasket = () => basket;
 const pickAMushroom = () => {
   const oneMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
   basket.push(oneMushroom);
+  basket.forEach((mushroom) => {
+    if (mushroom.isPoisonous === true) {
+      basket.pop();
+      basket.splice([Math.floor(Math.random() * basket.length)], 1);
+      basket.splice([Math.floor(Math.random() * basket.length)], 1);
+    }
+  });
 };
 
 export default { getMushrooms, getBasket, pickAMushroom };
