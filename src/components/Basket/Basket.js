@@ -18,11 +18,7 @@ class Basket extends React.Component {
 
     return (
      <div className="Basket d-flex flex-column justify-content-center">
-       { basketMushrooms[0] ? (
        <h2>My Basket</h2>
-       ) : (
-         ''
-       )}
        <div className="myBasket d-flex flex-wrap justify-content-center">
         {makeBasketMushrooms}
        </div>
