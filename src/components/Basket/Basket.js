@@ -12,8 +12,8 @@ class Basket extends React.Component {
 
   render() {
     const { basketMushrooms } = this.props;
-    const makeBasketMushrooms = basketMushrooms.map((oneMushroom) => (
-      <Mushroom key={`basket-${oneMushroom.id}`} mushroom={oneMushroom}/>
+    const makeBasketMushrooms = basketMushrooms.map((oneMushroom, index) => (
+      <Mushroom key={`basket-mushroom-${index}`} mushroom={oneMushroom}/>
     ));
 
     return (
