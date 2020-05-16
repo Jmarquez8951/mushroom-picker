@@ -196,6 +196,10 @@ const pickAMushroom = () => {
       basket.splice([Math.floor(Math.random() * basket.length)], 1);
       basket.splice([Math.floor(Math.random() * basket.length)], 1);
     }
+    if (mushroom.isDeadly === true) {
+      basket.pop();
+      basket.splice(0, basket.length);
+    }
   });
 };
 
