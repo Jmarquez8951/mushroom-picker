@@ -200,6 +200,14 @@ const pickAMushroom = () => {
       basket.pop();
       basket.splice(0, basket.length);
     }
+    if (mushroom.isMagic === true) {
+      basket.pop();
+      mushrooms.forEach((shroom) => {
+        if (shroom.isDeadly === false && shroom.isMagic === false && shroom.isPoisonous === false) {
+          basket.push(shroom);
+        }
+      });
+    }
   });
 };
 
