@@ -191,20 +191,33 @@ const pickAMushroom = () => {
   const oneMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
   basket.push(oneMushroom);
   basket.forEach((mushroom) => {
+    const unfortunate = document.getElementsByClassName('alert')[0];
+    if (unfortunate.classList.contains('hide') === false) {
+      unfortunate.classList.add('hide');
+    }
     if (mushroom.isPoisonous === true) {
       basket.pop();
       basket.splice([Math.floor(Math.random() * basket.length)], 1);
       basket.splice([Math.floor(Math.random() * basket.length)], 1);
+      if (unfortunate.classList.contains('hide') === true) {
+        unfortunate.classList.remove('hide');
+      }
     }
     if (mushroom.isDeadly === true) {
       basket.pop();
       basket.splice(0, basket.length);
+      if (unfortunate.classList.contains('hide') === true) {
+        unfortunate.classList.remove('hide');
+      }
     }
     if (mushroom.isMagic === true) {
       basket.pop();
       mushrooms.forEach((shroom) => {
         if (shroom.isDeadly === false && shroom.isMagic === false && shroom.isPoisonous === false) {
           basket.push(shroom);
+        }
+        if (unfortunate.classList.contains('hide') === false) {
+          unfortunate.classList.add('hide');
         }
       });
     }
