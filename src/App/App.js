@@ -4,6 +4,7 @@ import './App.scss';
 import mushroomData from '../helpers/data/mushroomData';
 import Forest from '../components/Forest/Forest';
 import Basket from '../components/Basket/Basket';
+import DeadlyPoison from '../components/DeadlyPoison/DeadlyPoison';
 
 class App extends React.Component {
   state = {
@@ -28,6 +29,7 @@ class App extends React.Component {
       <div className="App">
         <h1 className="text-white">Mushroom Picker</h1>
         <button className="btn btn-dark mb-3" onClick={this.randomMushroomEvent}>Pick a Mushroom</button>
+        <DeadlyPoison/>
         <Basket basketMushrooms={this.state.basket}/>
         <Forest mushrooms={this.state.mushrooms}/>
       </div>
