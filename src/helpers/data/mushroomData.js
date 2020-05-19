@@ -189,11 +189,15 @@ const getBasket = () => basket;
 
 const pickAMushroom = () => {
   const oneMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
+  const unfortunate = document.getElementsByClassName('loss')[0];
+  const winDiv = document.getElementsByClassName('win')[0];
   basket.push(oneMushroom);
   basket.forEach((mushroom) => {
-    const unfortunate = document.getElementsByClassName('alert')[0];
     if (unfortunate.classList.contains('hide') === false) {
       unfortunate.classList.add('hide');
+    }
+    if (winDiv.classList.contains('hide') === false) {
+      winDiv.classList.add('hide');
     }
     if (mushroom.isPoisonous === true) {
       basket.pop();
@@ -202,12 +206,18 @@ const pickAMushroom = () => {
       if (unfortunate.classList.contains('hide') === true) {
         unfortunate.classList.remove('hide');
       }
+      if (winDiv.classList.contains('hide') === false) {
+        winDiv.classList.add('hide');
+      }
     }
     if (mushroom.isDeadly === true) {
       basket.pop();
       basket.splice(0, basket.length);
       if (unfortunate.classList.contains('hide') === true) {
         unfortunate.classList.remove('hide');
+      }
+      if (winDiv.classList.contains('hide') === false) {
+        winDiv.classList.add('hide');
       }
     }
     if (mushroom.isMagic === true) {
@@ -218,6 +228,9 @@ const pickAMushroom = () => {
         }
         if (unfortunate.classList.contains('hide') === false) {
           unfortunate.classList.add('hide');
+        }
+        if (winDiv.classList.contains('hide') === true) {
+          winDiv.classList.remove('hide');
         }
       });
     }
