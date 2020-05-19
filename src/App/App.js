@@ -19,11 +19,27 @@ class App extends React.Component {
     this.setState({ mushrooms, basket });
   }
 
+   checkBasket = () => {
+     const winDiv = document.getElementsByClassName('win')[0];
+     const basket = mushroomData.getBasket();
+     const goodMushrooms = [...new Set(basket)];
+     if (goodMushrooms.length === 15) {
+       winDiv.classList.remove('hide');
+       const stopButton = document.getElementsByClassName('btn')[0];
+       stopButton.classList.add('disabled');
+     }
+   };
+
   randomMushroomEvent = (e) => {
     e.preventDefault();
+    const stopButton = document.getElementsByClassName('btn')[0];
+    if (stopButton.classList.contains('disabled') === true) {
+      return;
+    }
     mushroomData.pickAMushroom();
     const basket = mushroomData.getBasket();
     this.setState({ basket });
+    this.checkBasket();
   }
 
   render() {

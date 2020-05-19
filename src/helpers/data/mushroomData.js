@@ -229,12 +229,13 @@ const pickAMushroom = () => {
         if (unfortunate.classList.contains('hide') === false) {
           unfortunate.classList.add('hide');
         }
-        if (winDiv.classList.contains('hide') === true) {
-          winDiv.classList.remove('hide');
-        }
       });
     }
   });
 };
 
-export default { getMushrooms, getBasket, pickAMushroom };
+export default {
+  getMushrooms,
+  getBasket,
+  pickAMushroom,
+};
